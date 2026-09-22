@@ -76,9 +76,4 @@ Il notebook contiene il codice necessario per:
 
 ## 📓 Notebook
 
-Il repository include il notebook:
-
-```text
-Steam_Player_Count_Forecasting.ipynb
-```
-Il notebook contiene l'implementazione completa dell'esperimento e i risultati ottenuti.
+Il repository include il notebook contenente l'implementazione completa dell'esperimento e i risultati ottenuti.
