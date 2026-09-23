@@ -1,79 +1,78 @@
 # 🎮 Player Count Forecasting
 
-Progetto di **Intelligenza Artificiale** dedicato al **Time Series Forecasting** del numero di giocatori attivi nei videogiochi distribuiti sulla piattaforma Steam.
+AI project focused on **Time Series Forecasting** of the number of active players in video games distributed on the Steam platform.
 
-L'obiettivo è prevedere l'evoluzione del **player count giornaliero** di un gioco su un **orizzonte temporale di 14 giorni**, confrontando diverse architetture di forecasting.
+The goal is to predict the evolution of a game's **daily player count** over a **14-day forecasting horizon**, comparing different forecasting architectures.
 
-## 🎯 Obiettivo
+## 🎯 Objective
 
-Il numero di giocatori attivi di un videogioco può variare significativamente nel tempo ed è influenzato da diversi fattori, tra cui:
+The number of active players in a video game can vary significantly over time and is influenced by several factors, including:
 
-* aggiornamenti del gioco;
-* eventi speciali;
-* promozioni e variazioni di prezzo;
-* andamento delle recensioni;
-* pattern temporali e stagionali.
+* game updates;
+* special events;
+* promotions and price changes;
+* review trends;
+* temporal and seasonal patterns.
 
-Il progetto studia la capacità di diversi modelli di **deep learning per il forecasting** di catturare queste dinamiche e prevedere l'andamento futuro del player count.
+The project investigates the ability of different **deep learning forecasting models** to capture these dynamics and predict future player count.
 
-## 🤖 Modelli confrontati
+## 🤖 Models Compared
 
-Sono stati confrontati tre modelli di forecasting:
+Three forecasting models were compared:
 
 ### TCN — Temporal Convolutional Network
 
-Architettura basata su **Convolutional Neural Networks (CNN)** progettata per l'analisi di sequenze temporali.
+An architecture based on **Convolutional Neural Networks (CNNs)** designed for analyzing temporal sequences.
 
-Le convoluzioni temporali permettono di analizzare finestre temporali estese e di catturare dipendenze tra osservazioni distanti nel tempo.
+Temporal convolutions allow the model to analyze extended time windows and capture dependencies between observations that are distant in time.
 
 ### N-BEATSx
 
-Estensione di **N-BEATS** che integra **variabili esogene** oltre alla serie temporale principale.
+An extension of **N-BEATS** that integrates **exogenous variables** in addition to the main time series.
 
-Questo permette al modello di utilizzare informazioni aggiuntive, come prezzo e andamento delle recensioni, durante la previsione.
+This allows the model to use additional information, such as price and review trends, when making predictions.
 
 ### N-HiTS
 
-Evoluzione di N-BEATS che utilizza una struttura **gerarchica e multi-risoluzione** per analizzare pattern temporali a diverse scale.
+An evolution of N-BEATS that uses a **hierarchical, multi-resolution architecture** to analyze patterns at different temporal scales.
 
-L'approccio permette di catturare sia dinamiche a breve termine sia pattern distribuiti su intervalli temporali più lunghi.
+This approach allows the model to capture both short-term dynamics and patterns distributed across longer time intervals.
 
 ## 📊 Dataset
 
-### Fonte
+### Source
 
-I dati sono stati raccolti da **SteamDB**:
+The data was collected from **SteamDB**:
 
-[SteamDB](https://steamdb.info)
+[SteamDB](https://steamdb.info?utm_source=chatgpt.com)
 
-### Copertura
+### Coverage
 
-Il dataset comprende circa **350 videogiochi Steam**.
+The dataset includes approximately **350 Steam games**.
 
-Per ciascun gioco sono stati utilizzati dati storici relativi a:
+For each game, historical data was collected on:
 
-* **player count** giornaliero/orario;
-* numero di **recensioni positive** giornaliere;
-* numero di **recensioni negative** giornaliere;
-* **prezzo** giornaliero in euro;
-* **markers**, ovvero  eventi speciali spesso associati a picchi positivi o negativi dell’attività dei giocatori.
+* **daily/hourly player count**;
+* number of **daily positive reviews**;
+* number of **daily negative reviews**;
+* **daily price** in euros;
+* **markers**, representing special events often associated with positive or negative spikes in player activity.
 
-I dati vengono organizzati come serie temporali per ciascun videogioco, permettendo di studiare sia l'evoluzione temporale del singolo gioco sia la capacità dei modelli di generalizzare tra giochi differenti.
+The data is organized as time series for each game, making it possible to study both the temporal evolution of individual games and the ability of the models to generalize across different games.
 
+## 🧪 Model Comparison
 
-## 🧪 Confronto dei modelli
+The three architectures are trained and evaluated on the same forecasting task, allowing their predictive capabilities to be compared.
 
-Le tre architetture vengono addestrate e valutate sullo stesso problema di forecasting, permettendo di confrontarne le capacità predittive.
+The notebook contains the code required for:
 
-Il notebook contiene il codice necessario per:
-
-* preparazione e preprocessing dei dati;
-* costruzione delle serie temporali;
-* addestramento dei modelli;
-* generazione delle previsioni;
-* valutazione delle performance;
-* confronto dei risultati ottenuti.
+* data preparation and preprocessing;
+* time series construction;
+* model training;
+* forecast generation;
+* performance evaluation;
+* comparison of the obtained results.
 
 ## 📓 Notebook
 
-Il repository include il notebook contenente l'implementazione completa dell'esperimento e i risultati ottenuti.
+The repository includes the notebook containing the complete implementation of the experiment and the results obtained.
